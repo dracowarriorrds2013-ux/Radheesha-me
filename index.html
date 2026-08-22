@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio</title>
+    <link rel="icon" type="image/png" href="favicon.jpg.jpeg">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="server-status">
+        <span class="blue-dot"></span>
+        <span>Server Online</span>
+    </div>
+
+    <header>
+        <div class="banner">
+            <img src="banner.jpg.jpg" alt="Banner" class="banner-img">
+            <div class="profile-wrap">
+                <img src="profile.JPEG.jpeg.png" alt="Joel De Silva" class="profile-pic">
+                <span class="status-dot" title="Online"></span>
+            </div>
+        </div>
+        <h1>Hi, I'm Joel De Silva</h1>
+        <p>Web Developer | Scientific Research | Robotic AI Innovator | Graphic Designer</p>
+        <nav>
+            <a href="#About">About</a>
+            <a href="#School">School</a>
+            <a href="#Projects">Projects</a>
+            <a href="#Contact">Contact</a>
+        </nav>
+    </header>
+
+    <section id="ads" class="ads-section">
+        <div class="slider">
+            <div class="slide-track">
+                <img src="ad1.jpg.jpg" alt="Advertisement 1" class="slide">
+                <img src="ad2.jpg.jpg" alt="Advertisement 2" class="slide">
+                <img src="ad3.jpg.jpeg" alt="Advertisement 3" class="slide">
+                <img src="ad4.jpg.jpeg" alt="Advertisement 4" class="slide">
+                <img src="ad5.jpg.jpeg" alt="Advertisement 5" class="slide">
+            </div>
+        </div>
+        <div class="slider-dots"></div>
+    </section>
+
+    <section id="About" class="reveal">
+        <h2>About Me</h2>
+        <p>Welcome to my profile! I am Joel De Silva, a student at St. Anne's College, Kurunegala, guided by my Catholic faith and driven by a deep curiosity about how the world and the universe work.
+
+My journey is centered around the intersection of technology, science, and creativity. Whether I am building functional web applications, diving into scientific research, or experimenting with robotic AI innovations, I am constantly looking for ways to push boundaries and solve complex problems. As an aspiring AI Engineer, I aim to combine logic, coding, and scientific inquiry to build intelligent systems that can make a meaningful impact.</p>
+    </section>
+
+    <section id="School" class="reveal">
+        <h2>My School</h2>
+        <div class="school-info">
+            <img src="school-logo.png.png" alt="St. Anne's College Logo" class="school-logo">
+            <div class="school-details">
+                <h3>St. Anne's College, Kurunegala</h3>
+                <p>Add a short paragraph here — when you joined, what you're studying, activities you're part of, or any achievements you're proud of.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects" class="reveal">
+        <h2>My Projects</h2>
+        <div class="project-grid">
+            <div class="project-card">
+                <h3>Annite Space & Tech Hub</h3>
+                <p>A futuristic, space-themed interactive portfolio designed to showcase web development projects, astrophysics interests, and school pride with a dynamic user interface.</p>
+            </div>
+            <div class="project-card">
+                <h3>Autonomous Robot Simulator</h3>
+                <p>A browser-based robotics simulation project where an AI agent navigates custom tracks, avoids obstacles, and optimizes its route in real-time.</p>
+            </div>
+            <div class="project-card">
+                <h3>Exoplanet Habitability Analyzer</h3>
+                <p>A data-driven scientific research tool that analyzes astronomical datasets to evaluate and score whether newly discovered exoplanets could support life.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="reveal">
+        <h2>Contact Me</h2>
+        <p>dracowarrior.rds2013@gmail.com</p>
+
+        <div class="social-links">
+            <a href="https://github.com/YourUsername" target="_blank" class="social-icon github">GitHub</a>
+            <a href="https://www.instagram.com/YourUsername" target="_blank" class="social-icon instagram">Instagram</a>
+            <a href="https://www.tiktok.com/@YourUsername" target="_blank" class="social-icon tiktok">TikTok</a>
+            <a href="https://www.youtube.com/@YourChannelName" target="_blank" class="social-icon youtube">YouTube</a>
+        </div>
+
+        <form id="contact-form" action="https://api.web3forms.com/submit" method="POST" class="contact-form">
+            <input type="hidden" name="access_key" value="91c50506-d8e7-4685-bcc1-f2484f5ea69c">
+            <input type="text" name="name" placeholder="Your Name" required>
+            <input type="email" name="email" placeholder="Your Email" required>
+            <input type="tel" name="phone" placeholder="Your Phone Number (optional)">
+            <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
+            <button type="submit" id="submit-btn">Send Message</button>
+        </form>
+    </section>
+
+    <div id="success-popup" class="success-popup">
+        ✅ Message sent successfully!
+    </div>
+
+    <audio id="bg-music" src="background-music.mp3.mp3" loop></audio>
+    <button id="music-toggle" class="music-btn">🔇 Play Music</button>
+    <a href="#contact" class="contact-fab">✉️ Contact Me</a>
+
+    <script src="script.js"></script>
+</body>
+</html>

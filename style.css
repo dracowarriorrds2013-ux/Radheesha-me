@@ -1,0 +1,447 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f9f9f9;
+}
+
+/* --- Server online badge (top-left) --- */
+.server-status {
+    position: fixed;
+    top: 15px;
+    left: 15px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background-color: rgba(0, 0, 0, 0.7);
+    color: white;
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    z-index: 1000;
+}
+
+.blue-dot {
+    width: 10px;
+    height: 10px;
+    background-color: #3498db;
+    border-radius: 50%;
+    animation: bounce 1s infinite ease-in-out;
+}
+
+@keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-5px); }
+}
+
+header {
+    background-color: #2c3e50;
+    color: white;
+    text-align: center;
+    padding: 0 20px 40px;
+}
+
+header h1 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+}
+
+/* --- Banner + overlapping profile pic --- */
+.banner {
+    position: relative;
+    width: 100%;
+    height: 200px;
+    margin-bottom: 80px;
+}
+
+.banner-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.profile-wrap {
+    position: absolute;
+    left: 50%;
+    bottom: -70px;
+    transform: translateX(-50%);
+}
+
+.profile-pic {
+    width: 140px;
+    height: 140px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 4px solid white;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.35);
+}
+
+.status-dot {
+    position: absolute;
+    width: 22px;
+    height: 22px;
+    background-color: #2ecc71;
+    border: 3px solid white;
+    border-radius: 50%;
+    bottom: 8px;
+    right: 8px;
+}
+
+section {
+    max-width: 700px;
+    margin: 40px auto;
+    padding: 20px;
+}
+
+section h2 {
+    margin-bottom: 15px;
+    border-bottom: 2px solid #2c3e50;
+    padding-bottom: 5px;
+}
+
+nav {
+    margin-top: 20px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin: 0 15px;
+    font-weight: bold;
+    padding: 8px 16px;
+    border: 1px solid white;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+nav a:hover {
+    background-color: white;
+    color: #2c3e50;
+}
+
+/* --- Ads slider --- */
+.ads-section {
+    max-width: 900px;
+    margin: 30px auto;
+    padding: 0 20px;
+}
+
+.slider {
+    position: relative;
+    width: 100%;
+    height: 220px;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+}
+
+.slide-track {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.8s ease-in-out;
+}
+
+.slide {
+    min-width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.slider-dots {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 12px;
+}
+
+.dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: #ccc;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.dot.active-dot {
+    background-color: #2c3e50;
+}
+
+/* --- Text reveal animation on scroll --- */
+.reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* --- School section --- */
+.school-info {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.school-logo {
+    width: 100px;
+    height: 100px;
+    object-fit: contain;
+    background-color: white;
+    border-radius: 8px;
+    padding: 8px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.school-details h3 {
+    color: #2c3e50;
+    margin-bottom: 8px;
+}
+
+/* --- Projects --- */
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.project-card {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s;
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
+}
+
+.project-card h3 {
+    margin-bottom: 10px;
+    color: #2c3e50;
+}
+
+/* --- Social links --- */
+.social-links {
+    display: flex;
+    gap: 12px;
+    margin: 15px 0;
+    flex-wrap: wrap;
+}
+
+.social-icon {
+    display: inline-block;
+    padding: 8px 16px;
+    border-radius: 20px;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 0.9rem;
+    transition: transform 0.2s, opacity 0.2s;
+}
+
+.social-icon:hover {
+    transform: translateY(-2px);
+    opacity: 0.9;
+}
+
+.social-icon.github {
+    background-color: #24292e;
+}
+
+.social-icon.instagram {
+    background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
+}
+
+.social-icon.tiktok {
+    background-color: #000000;
+}
+
+.social-icon.youtube {
+    background-color: #ff0000;
+}
+
+/* --- Contact form --- */
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    max-width: 400px;
+    margin: 20px 0;
+}
+
+.contact-form input,
+.contact-form textarea {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-family: Arial, sans-serif;
+    font-size: 1rem;
+    transition: border-color 0.3s, box-shadow 0.3s, transform 0.2s;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+    outline: none;
+    border-color: #2c3e50;
+    box-shadow: 0 0 0 3px rgba(44, 62, 80, 0.15);
+    transform: scale(1.02);
+}
+
+.contact-form button {
+    background-color: #2c3e50;
+    color: white;
+    border: none;
+    padding: 12px;
+    border-radius: 6px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.15s;
+}
+
+.contact-form button:hover {
+    background-color: #1a252f;
+}
+
+.contact-form button:active {
+    transform: scale(0.96);
+}
+
+.contact-form button.sending {
+    opacity: 0.7;
+    cursor: not-allowed;
+}
+
+/* --- Success popup --- */
+.success-popup {
+    position: fixed;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%) translateY(-100px);
+    background-color: #2ecc71;
+    color: white;
+    padding: 14px 24px;
+    border-radius: 30px;
+    font-weight: bold;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    z-index: 2000;
+    opacity: 0;
+    transition: transform 0.5s ease, opacity 0.5s ease;
+}
+
+.success-popup.show {
+    transform: translateX(-50%) translateY(0);
+    opacity: 1;
+}
+
+/* --- Floating buttons --- */
+.music-btn {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #2c3e50;
+    color: white;
+    border: none;
+    padding: 10px 16px;
+    border-radius: 30px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+    z-index: 1000;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.music-btn:hover {
+    background-color: #1a252f;
+    transform: scale(1.05);
+}
+
+.contact-fab {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    background-color: #2c3e50;
+    color: white;
+    text-decoration: none;
+    padding: 12px 20px;
+    border-radius: 30px;
+    font-weight: bold;
+    font-size: 0.9rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+    z-index: 1000;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.contact-fab:hover {
+    background-color: #1a252f;
+    transform: scale(1.05);
+}
+
+/* --- Responsive adjustments for tablets and phones --- */
+@media (max-width: 600px) {
+    header h1 {
+        font-size: 1.8rem;
+    }
+
+    .banner {
+        height: 140px;
+        margin-bottom: 60px;
+    }
+
+    .profile-wrap {
+        bottom: -55px;
+    }
+
+    .profile-pic {
+        width: 110px;
+        height: 110px;
+    }
+
+    nav a {
+        display: inline-block;
+        margin: 6px 8px;
+        padding: 6px 12px;
+        font-size: 0.9rem;
+    }
+
+    section {
+        padding: 15px;
+        margin: 25px auto;
+    }
+
+    .slider {
+        height: 160px;
+    }
+
+    .school-info {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .project-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .server-status {
+        font-size: 0.75rem;
+        padding: 5px 10px;
+    }
+}
